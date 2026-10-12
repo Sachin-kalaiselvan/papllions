@@ -96,6 +96,31 @@
   font-weight: 500;
 }
 
+/* Touch devices: lift the small letterspaced labels to 12px. This also brings
+   the category filter chips and contact radios up to a 44px tap target, since
+   they size from this text plus their padding. */
+@media (pointer: coarse) {
+  .eyebrow { font-size: 0.75rem; letter-spacing: 0.26em; }
+  .btn-lux { font-size: 0.78rem; letter-spacing: 0.2em; }
+}
+
+/* 44x44 minimum touch target (Apple HIG / WCAG 2.5.5) without inflating the
+   visual box: keep link-lux's underline on an inner span. */
+@utility tap {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+/* Horizontal chip rows: snap to each chip and hide the scrollbar on touch. */
+@utility snap-row {
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  & > * { scroll-snap-align: start; }
+  &::-webkit-scrollbar { display: none; }
+}
+
 @utility gold-rule {
   display: block;
   height: 1px;
