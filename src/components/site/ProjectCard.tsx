@@ -3,7 +3,10 @@ import type { Project } from "@/content/projects";
 
 const ratio = { landscape: "aspect-[4/3]", portrait: "aspect-[3/4]", square: "aspect-square" };
 
-export function ProjectCard({ project, className = "", shape }: { project: Project; className?: string; shape?: keyof typeof ratio }) {
+// `shape` and `className` accept an explicit `undefined` so callers can pass an
+// optional lookup (e.g. shapes[i % shapes.length]) directly under
+// exactOptionalPropertyTypes. Both have runtime fallbacks below.
+export function ProjectCard({ project, className = "", shape }: { project: Project; className?: string | undefined; shape?: keyof typeof ratio | undefined }) {
   const s = shape ?? project.cover.shape;
   return (
     <Link to="/gallery/$slug" params={{ slug: project.slug }} className={`group block ${className}`}>
