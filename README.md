@@ -1,24 +1,34 @@
-# papillons
+# Papillons
 
-Implement exactly the screenshot and nothing else
+Marketing site for Papillons, an interior design studio.
 
-This project was built with [Lovable](https://lovable.dev).
+Built with TanStack Start (SSR) on React 19, TanStack Router, Tailwind CSS v4,
+shadcn/ui and Framer Motion. Server bundling is handled by Nitro.
 
-## Build with Lovable
+## Local development
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9ba60268-f150-46bf-9959-8431b7a236c3).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm install
 npm run dev
 ```
+
+## Build
+
+```bash
+npm run build     # outputs Vercel Build Output API format to .vercel/output
+npm run preview   # serve the production build locally
+npm run test      # vitest
+```
+
+To build a plain Node server instead of the Vercel target:
+
+```bash
+NITRO_PRESET=node-server npm run build
+node .output/server/index.mjs
+```
+
+## Deployment
+
+Deployed on Vercel. The Nitro `vercel` preset writes `.vercel/output`, which
+Vercel picks up directly — no build settings or output directory to configure.
+Pushes to the default branch deploy automatically; pull requests get preview URLs.
