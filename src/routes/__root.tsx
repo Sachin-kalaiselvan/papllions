@@ -14,6 +14,7 @@ import { type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { FloatingActions } from "@/components/site/FloatingActions";
 
 function NotFoundComponent() {
   return (
@@ -46,24 +47,38 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
+// Social scrapers (WhatsApp, Slack, X, LinkedIn) require ABSOLUTE og:image URLs.
+// Set VITE_SITE_URL in Vercel when a custom domain replaces the .vercel.app one.
+const SITE_URL = import.meta.env["VITE_SITE_URL"] ?? "https://papllions.vercel.app";
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Papillons — Interior Design Studio" },
-      { name: "description", content: "Papillons designs considered interiors shaped around the way you live." },
+      { title: "Papillon Interiors — Bengaluru Design Studio" },
+      { name: "description", content: "Papillon Interiors designs considered interiors shaped around the way you live." },
       { name: "theme-color", content: "#0B211B" },
-      { property: "og:site_name", content: "Papillons" },
+      { property: "og:site_name", content: "Papillon Interiors" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:locale", content: "en_IN" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Papillon Interiors — Bengaluru Design Studio" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap" },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -98,6 +113,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingActions />
       </MotionConfig>
     </QueryClientProvider>
   );
