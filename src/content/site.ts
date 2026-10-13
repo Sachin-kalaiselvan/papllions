@@ -1,16 +1,16 @@
 /**
  * Central business configuration. Every value marked PLACEHOLDER must be
- * replaced with details verified by Papillons before launch.
+ * replaced with details verified by Papillon Interiors before launch.
  */
 export const site = {
-  name: "Papillons",
-  tagline: "Interior Design Studio",
+  name: "Papillon Interiors",
+  tagline: "The Design You Desire",
   // PLACEHOLDER — replace with real contact details
-  email: "hello@papillons.example",
-  phone: "+91 00000 00000",
-  whatsapp: "", // e.g. "910000000000" — leave empty to hide the WhatsApp link
-  address: "Studio address to be confirmed",
-  hours: "Mon – Sat, 10:00 – 19:00 (to be confirmed)",
+  email: "hello@papilloninteriors.com",
+  phone: "+91 82176 45020",
+  whatsapp: "+91 82176 45020", // e.g. "917483992418" — country code, no + or spaces
+  address: "Studio address",
+  hours: "Mon – Sat, 10:00 – 19:00",
   socials: [
     { label: "Instagram", href: "" },
     { label: "Pinterest", href: "" },
@@ -18,7 +18,7 @@ export const site = {
   isPlaceholder: true,
 };
 
-// PLACEHOLDER — services to be confirmed by Papillons before publishing
+// PLACEHOLDER — services to be confirmed by Papillon Interiors before publishing
 export const services = [
   { title: "Residential Interiors", body: "Whole-home design, from spatial planning to the final cushion." },
   { title: "Living Spaces", body: "Rooms for gathering, composed around light and conversation." },
@@ -36,7 +36,7 @@ export const journey = [
 ];
 
 /**
- * Genuine, authorised client testimonials only. Leave empty until Papillons
+ * Genuine, authorised client testimonials only. Leave empty until Papillon Interiors
  * supplies approved feedback — the site shows a graceful empty state.
  */
 export type Testimonial = { quote: string; name: string; project?: string };
