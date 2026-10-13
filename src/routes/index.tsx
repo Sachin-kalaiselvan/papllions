@@ -9,9 +9,9 @@ import { ProjectCard } from "@/components/site/ProjectCard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Papillons — Spaces That Feel Like You" },
-      { name: "description", content: "Thoughtfully designed interiors, shaped around the way you live. Explore the Papillons portfolio and start your project." },
-      { property: "og:title", content: "Papillons — Spaces That Feel Like You" },
+      { title: "Papillon Interiors — Spaces That Feel Like You" },
+      { name: "description", content: "Thoughtfully designed interiors, shaped around the way you live. Explore the Papillon Interiors portfolio and start your project." },
+      { property: "og:title", content: "Papillon Interiors — Spaces That Feel Like You" },
       { property: "og:description", content: "Thoughtfully designed interiors, shaped around the way you live." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -79,7 +79,7 @@ function Intro() {
             <p>From there, materials are chosen for how they age, craftsmanship for how it feels under the hand, and every detail for the person who will live with it.</p>
           </div>
         </Reveal>
-        <Reveal delay={0.3}><Link to="/about" className="link-lux eyebrow mt-10 inline-block text-bottle">About the studio</Link></Reveal>
+        <Reveal delay={0.3}><Link to="/about" className="tap eyebrow mt-8 text-bottle"><span className="link-lux">About the studio</span></Link></Reveal>
       </div>
       <div className="relative md:col-span-6 md:col-start-7">
         <MaskImage src={images.bedroom} alt="Oak-panelled bedroom with linen bedding" className="aspect-[3/4] w-[82%]" width={896} height={1200} />
@@ -139,10 +139,10 @@ function Featured() {
           <p className="eyebrow text-bottle">Selected work</p>
           <h2 className="mt-5 text-5xl md:text-7xl">Featured <em>Projects</em></h2>
         </Reveal>
-        <div role="group" aria-label="Filter projects" className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 md:mx-0 md:flex-wrap md:px-0">
+        <div role="group" aria-label="Filter projects" className="snap-row -mx-5 flex gap-2 overflow-x-auto px-5 pb-2 md:mx-0 md:flex-wrap md:px-0">
           {categories.map((c) => (
             <button key={c} type="button" onClick={() => setCat(c)} aria-pressed={cat === c}
-              className={`eyebrow shrink-0 border px-4 py-3 transition-colors duration-500 ${cat === c ? "border-bottle bg-bottle text-ivory" : "border-border hover:border-bottle"}`}>{c}</button>
+              className={`eyebrow inline-flex min-h-11 shrink-0 items-center border px-4 py-3 transition-colors duration-500 ${cat === c ? "border-bottle bg-bottle text-ivory" : "border-border hover:border-bottle"}`}>{c}</button>
           ))}
         </div>
       </div>
@@ -227,7 +227,7 @@ function TestimonialPreview() {
         ) : (
           <>
             <p className="mt-8 font-display text-3xl italic leading-snug text-charcoal/70 md:text-5xl">Client stories will appear here once shared with us.</p>
-            <Link to="/testimonials" className="link-lux eyebrow mt-10 inline-block text-bottle">Testimonials</Link>
+            <Link to="/testimonials" className="tap eyebrow mt-8 text-bottle"><span className="link-lux">Testimonials</span></Link>
           </>
         )}
       </Reveal>
