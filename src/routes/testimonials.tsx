@@ -7,10 +7,10 @@ import { images } from "@/content/projects";
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
-      { title: "Testimonials — Papillons" },
-      { name: "description", content: "Words from Papillons clients about their homes and spaces." },
-      { property: "og:title", content: "Papillons Testimonials" },
-      { property: "og:description", content: "Words from Papillons clients about their homes and spaces." },
+      { title: "Testimonials — Papillon Interiors" },
+      { name: "description", content: "Words from Papillon Interiors clients about their homes and spaces." },
+      { property: "og:title", content: "Papillon Interiors Testimonials" },
+      { property: "og:description", content: "Words from Papillon Interiors clients about their homes and spaces." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
