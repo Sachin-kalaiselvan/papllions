@@ -32,9 +32,11 @@ export function SiteHeader() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-700 ${solid ? "bg-forest" : "bg-transparent"}`}>
       <div className="container-lux grid h-18 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-5 md:h-20">
-        <Link to="/" className="min-w-0 text-ivory" aria-label="Papillons — home">
-          <span className="font-display text-2xl tracking-wide md:text-3xl">Papillons</span>
-          <span className="eyebrow ml-3 hidden text-champagne sm:inline">Interiors</span>
+        <Link to="/" className="tap min-w-0 text-ivory" aria-label="Papillon Interiors — home">
+          <img src="/papillon-lockup-compact-light.svg" alt="Papillon Interiors"
+            width={491} height={100} className="h-7 w-auto sm:hidden" />
+          <img src="/papillon-lockup-light.svg" alt="Papillon Interiors — The Design You Desire"
+            width={491} height={100} className="hidden h-8 w-auto sm:block md:h-10" />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-9 lg:flex">
           {nav.map((n) => (
@@ -54,7 +56,7 @@ export function SiteHeader() {
       <AnimatePresence>
         {open && (
           <motion.div id="mobile-menu" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease }} className="fixed inset-x-0 bottom-0 top-[72px] bg-forest lg:hidden">
+            transition={{ duration: 0.5, ease }} className="fixed inset-x-0 bottom-0 top-18 bg-forest md:top-20 lg:hidden">
             <nav aria-label="Mobile" className="container-lux flex h-full flex-col justify-between pb-10 pt-8">
               <ul className="space-y-2">
                 {nav.map((n, i) => (
