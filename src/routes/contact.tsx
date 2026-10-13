@@ -9,9 +9,9 @@ import { ease } from "@/components/site/Reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Start Your Project with Papillons" },
-      { name: "description", content: "Tell Papillons about your space and book a design consultation." },
-      { property: "og:title", content: "Start Your Project — Papillons" },
+      { title: "Contact — Start Your Project with Papillon Interiors" },
+      { name: "description", content: "Tell Papillon Interiors about your space and book a design consultation." },
+      { property: "og:title", content: "Start Your Project — Papillon Interiors" },
       { property: "og:description", content: "Tell us about your space and book a design consultation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -117,7 +117,7 @@ function Contact() {
                   {["Email", "Phone", "WhatsApp"].map((m) => (
                     <label key={m} className="cursor-pointer">
                       <input type="radio" name="contactMethod" value={m} className="peer sr-only" />
-                      <span className="eyebrow inline-block border border-input px-4 py-3 transition-colors peer-checked:border-bottle peer-checked:bg-bottle peer-checked:text-ivory peer-focus-visible:outline peer-focus-visible:outline-1 peer-focus-visible:outline-gold">{m}</span>
+                      <span className="eyebrow inline-flex min-h-11 items-center border border-input px-4 py-3 transition-colors peer-checked:border-bottle peer-checked:bg-bottle peer-checked:text-ivory peer-focus-visible:outline peer-focus-visible:outline-1 peer-focus-visible:outline-gold">{m}</span>
                     </label>
                   ))}
                 </div>
