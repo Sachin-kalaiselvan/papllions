@@ -7,10 +7,10 @@ import { services, journey } from "@/content/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Papillons Interior Design Studio" },
-      { name: "description", content: "The philosophy, values and design approach behind Papillons interiors." },
-      { property: "og:title", content: "About Papillons" },
-      { property: "og:description", content: "The philosophy, values and design approach behind Papillons interiors." },
+      { title: "About — Papillon Interiors" },
+      { name: "description", content: "The philosophy, values and design approach behind Papillon Interiors." },
+      { property: "og:title", content: "About Papillon Interiors" },
+      { property: "og:description", content: "The philosophy, values and design approach behind Papillon Interiors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -27,7 +27,7 @@ function About() {
   ];
   return (
     <>
-      <PageHero eyebrow="About the studio" title="Rooms with a quiet point of view." intro="Papillons designs interiors around the people who inhabit them — composed, warm and made to last." />
+      <PageHero eyebrow="About the studio" title="Rooms with a quiet point of view." intro="Papillon Interiors designs interiors around the people who inhabit them — composed, warm and made to last." />
 
       <section className="container-lux grid gap-12 py-24 md:grid-cols-12 md:py-36">
         <MaskImage src={images.furniture} alt="Fluted walnut sideboard styled with ceramics" className="aspect-[4/5] md:col-span-5" width={896} height={1200} />
@@ -37,7 +37,7 @@ function About() {
           <Reveal delay={0.2}>
             <div className="mt-8 space-y-5 leading-relaxed text-muted-foreground">
               <p>We approach every space as a composition of light, proportion and material. The aim is never a showroom — it is a home, or a place of work, that feels inevitable once complete.</p>
-              <p>Founder and team details will be added here once supplied by Papillons.</p>
+              <p>Founder and team details will be added here once supplied by Papillon Interiors.</p>
             </div>
           </Reveal>
         </div>
