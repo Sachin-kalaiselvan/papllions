@@ -13,14 +13,14 @@ export const Route = createFileRoute("/gallery/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.project.title} — Papillons` },
+          { title: `${loaderData.project.title} — Papillon Interiors` },
           { name: "description", content: loaderData.project.summary },
-          { property: "og:title", content: `${loaderData.project.title} — Papillons` },
+          { property: "og:title", content: `${loaderData.project.title} — Papillon Interiors` },
           { property: "og:description", content: loaderData.project.summary },
           { property: "og:type", content: "article" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
-      : [{ title: "Project not found — Papillons" }, { name: "robots", content: "noindex" }],
+      : [{ title: "Project not found — Papillon Interiors" }, { name: "robots", content: "noindex" }],
   }),
   notFoundComponent: () => (
     <div className="container-lux py-48 text-center">
@@ -42,10 +42,10 @@ function ProjectPage() {
           transition={{ duration: 1.8, ease }} className="absolute inset-0 h-full w-full object-cover" />
         <div className="hero-scrim absolute inset-0" />
         <div className="container-lux relative flex h-full flex-col justify-end pb-14 text-ivory">
-          <Link to="/gallery" className="link-lux eyebrow mb-8 self-start text-champagne">← All projects</Link>
+          <Link to="/gallery" className="tap eyebrow mb-6 self-start text-champagne"><span className="link-lux">← All projects</span></Link>
           <p className="eyebrow text-gold">{project.category}{project.location && ` · ${project.location}`}</p>
           <h1 className="mt-4 text-6xl leading-none md:text-9xl">{project.title}</h1>
-          {project.demo && <p className="mt-6 text-xs text-ivory/70">Illustrative demonstration project — not a completed Papillons commission.</p>}
+          {project.demo && <p className="mt-6 text-xs text-ivory/70">Illustrative demonstration project — not a completed Papillon Interiors commission.</p>}
         </div>
       </section>
 
